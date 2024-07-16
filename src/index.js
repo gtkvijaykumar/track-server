@@ -1,7 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const router = require("./routes/authRoutes");
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(router);
 
 const mongoUri =
   "mongodb+srv://admin:passwordpassword@mangodbcluster.vnjr1qv.mongodb.net/";
